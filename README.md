@@ -16,7 +16,7 @@
 - **Predicción local:** Modelos ligeros optimizados para funcionar sin internet.
 - **Calendario agrícola:** Herramienta que genera recomendaciones basadas en fechas y rotación de cultivos.
 
-![arquitectura SeedLink](.img/seedlink.png)
+![arquitectura SeedLink](img/seedlink.png)
 
 ### 🌍 **Sostenibilidad**
 - Prácticas inspiradas en la milpa maya, como la rotación de cultivos.
