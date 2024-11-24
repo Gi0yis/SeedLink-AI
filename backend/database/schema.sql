@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS inputs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    input_data TEXT NOT NULL,
+    prediction TEXT NOT NULL
+);
