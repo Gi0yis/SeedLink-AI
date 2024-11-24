@@ -1,3 +1,4 @@
+![Imagen portada](img/img2.png)
 # 🌱 SeedLink AI: Cultivando el Futuro con Sabiduría Maya 🌽
 
 **SeedLink AI** es una solución innovadora para la agricultura sostenible que combina inteligencia artificial y prácticas tradicionales mayas. Diseñada para funcionar tanto online como offline, SeedLink ofrece predicciones climáticas, recomendaciones agrícolas y un enfoque accesible para agricultores de todas las regiones.
