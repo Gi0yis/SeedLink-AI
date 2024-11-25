@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CultivosComponent implements OnInit {
   tab: 'graph' | 'haab' = 'graph';
+  response = '';
   cultivos = [
     { nombre: 'Maíz', porcentaje: 92, 'temperatura': '12°', 'humedad': '7%', 'lluvia': '4mm', riego: 'Moderado', tiempoCosecha: 120 },
     { nombre: 'Trigo', porcentaje: 85, 'temperatura': '22°', 'humedad': '3%', 'lluvia': '30mm', riego: 'Bajo', tiempoCosecha: 110 },
@@ -15,7 +16,7 @@ export class CultivosComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    // Aquí puedes cargar los datos desde un servicio en un proyecto real
+    this.response = localStorage.getItem('response') || '';
   }
 
   switchTab(tab:'graph' | 'haab') {

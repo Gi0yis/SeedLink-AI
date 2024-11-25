@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements AfterViewInit {
   title = 'ng-azure-maps-tutorial';
   staging: 'starting' | 'loading' | 'show-results' = 'starting';
+  localidad = '';
   map!: atlas.Map;
   currentMarker: atlas.HtmlMarker | null = null;
   currentDataSource: atlas.source.DataSource | null = null;
@@ -30,7 +31,7 @@ export class HomeComponent implements AfterViewInit {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngAfterViewInit() {
@@ -118,15 +119,15 @@ export class HomeComponent implements AfterViewInit {
   }
 
   getWeatherData(coordinates: [number, number]) {
-    // const url = `https://atlas.microsoft.com/weather/currentConditions/json?api-version=1.0&query=${coordinates[1]},${coordinates[0]}`;
     const url = `https://atlas.microsoft.com/search/address/reverse/json?&api-version=1.0&query=${coordinates[1]},${coordinates[0]}&language=es-ES`;
 
     this.http.get(url).subscribe((data: any) => {
       console.log('Weather data:', data);
-      const {country, countrySubdivision, localName, street} = data.addresses[0].address
+      const {countrySubdivision, localName} = data.addresses[0].address;
+      this.localidad = `${localName}, ${countrySubdivision}`;
       // Swal.fire({
       //   title: 'Dirección',
-      //   text: `${street}, ${localName}, ${countrySubdivision}, ${country}`,
+      //   text: `${localName}, ${countrySubdivision}`,
       //   icon: 'info',
       //   confirmButtonText: 'OK'
       // });
@@ -134,26 +135,23 @@ export class HomeComponent implements AfterViewInit {
   }
 
   onSubmit() {
-    const datos = {
+    const request = {
       cultivo: this.tipoCultivo,
       fecha: this.fecha,
-      latitud: this.coordenadas![0],
-      longitud: this.coordenadas![1]
+      localidad: this.localidad,
+      // latitud: this.coordenadas![0],
+      // longitud: this.coordenadas![1]
     };
 
-
-    // Swal.fire({
-    //   title: 'Datos enviados',
-    //   text: `Los datos se enviaron correctamente`,
-    //   icon: 'success',
-    //   confirmButtonText: 'OK'
-    // });
-
     this.staging = 'loading';
-
-    setTimeout(()=>{
+    this.http.post('http://localhost:5000/predit', request).subscribe((data:any) =>{
+      localStorage.setItem('response', data.response);
       this.router.navigate(['/cultivos']);
-    },2000);
+    });
+
+    // setTimeout(()=>{
+    //   this.router.navigate(['/cultivos']);
+    // },2000);
 
 
   }

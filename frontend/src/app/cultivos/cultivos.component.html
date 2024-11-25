@@ -5,8 +5,13 @@
         <div class="col tab" (click)="switchTab('haab')">haab</div>
     </div>
     <ng-container *ngIf="tab==='graph'">
-        <div *ngFor="let cultivo of cultivos">
-            <app-cultivo-recomendado [cultivo]="cultivo"></app-cultivo-recomendado>
+        <div class="imagen">
+            <img src="../../assets/img/graph.png">
+        </div>
+        <div class="cultivo-card">
+            <div class="row w-100">
+                {{response}}
+            </div>
         </div>
     </ng-container>
     <ng-container *ngIf="tab==='haab'">
