@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="principal">
+        <label for="zona">Predicciones</label>
+    </div>
+    <div *ngFor="let cultivo of cultivos">
+        <div class="cultivo-card">
+            <div class="row w-100">
+                {{cultivo.nombre}}
+            </div>
+        </div>
+
+    </div>
+</div>

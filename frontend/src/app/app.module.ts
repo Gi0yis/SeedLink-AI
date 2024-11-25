@@ -18,6 +18,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { PrediccionesComponent } from './predicciones/predicciones.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
+    PrediccionesComponent,
   ],
   imports: [
     BrowserModule,

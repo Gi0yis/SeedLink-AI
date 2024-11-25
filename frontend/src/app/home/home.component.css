@@ -50,3 +50,7 @@ button.btn-block {
     color: #4caf50;
     font-size: 1.3em;
 }
+
+button, button:hover {
+    background-color: #45a049; /* Un tono más oscuro */
+}
