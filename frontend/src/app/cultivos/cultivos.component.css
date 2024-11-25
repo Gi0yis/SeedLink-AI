@@ -22,6 +22,14 @@
     cursor: pointer;
 }
 
+.imagen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
 img {
     width: 100%;
 }
