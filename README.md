@@ -35,8 +35,8 @@
 ---
 
 ## 💡 Tecnologías
-- **Backend:** Java (PyTorch para Machine Learning).
-- **Frontend:** Flutter para una interfaz intuitiva y funcional.
+- **Backend:** Flask (PyTorch para Machine Learning).
+- **Frontend:** Angular para una interfaz intuitiva y funcional.
 - **Modelos de IA:** Llama de Meta para procesamiento en lenguaje natural.
 - **Nube:** Servicios de Azure para almacenamiento y entrenamiento continuo.
 
