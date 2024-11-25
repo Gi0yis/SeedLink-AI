@@ -1,0 +1,15 @@
+.principal {
+    margin: 10px 7px;
+    padding-top: 10px;
+    border: 1px solid #4caf50;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+label {
+    font-weight: 600;
+    color: #4caf50;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}

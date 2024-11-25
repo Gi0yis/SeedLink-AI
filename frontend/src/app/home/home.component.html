@@ -1,0 +1,35 @@
+<app-loading-component *ngIf="staging=='loading'"></app-loading-component>
+<div class="container">
+    <div class="principal">
+        <label for="zona">Predicción</label>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" #cultivoForm="ngForm">
+
+        <br>
+        <div class="form-group">
+            <label for="zona">Zona de Plantación</label>
+            <div id="myMap" style="width: 100%; height: 400px;"></div>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label for="fecha">Fecha (opcional)</label>
+            <p-calendar [(ngModel)]="fecha" name="fecha" id="fecha" [showIcon]="true"></p-calendar>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label for="tipoCultivo">Tipo de Cultivo (opcional)</label>
+            <ng-select [items]="cultivos" bindLabel="name" bindValue="value" [(ngModel)]="tipoCultivo"
+                name="tipoCultivo" placeholder="Seleccione un cultivo" required>
+            </ng-select>
+        </div>
+
+        <br>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Enviar</button>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,10 @@
+<div class="cultivos-container">
+    <div class="principal row">
+        <div class="col tab">Gráfico</div>
+        <div class="col">|</div>
+        <div class="col tab">haab</div>
+    </div>
+    <div *ngFor="let cultivo of cultivos">
+        <app-cultivo-recomendado [cultivo]="cultivo"></app-cultivo-recomendado>
+    </div>
+</div>
